@@ -1,0 +1,50 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=Windows-1252">
+</head>
+<body>
+<pre>
+<table width=100% bgcolor=#CFCFE5><tr> <td> <font face=arial size=+3>
+Build Log
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
+<h3>------- Build started: Project: _pdvpycam24, Configuration: Release|Win32 -------
+</h3>
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Command Lines
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>Creating temporary file "c:\Documents and Settings\Jake\My Documents\Projects\Visual Studio\_pdvpycam24\Release\RSP000001.rsp" with contents
+[
+/O2 /I "c:\python24\include" /I "c:\program files\pdv" /D "WIN32" /D "_WINDOWS" /D "NDEBUG" /D "_USRDLL" /D "_WINDLL" /D "_AFXDLL" /D "_MBCS" /FD /EHsc /MD /GS /Zc:wchar_t /Fo"Release/pdvpycam24_wrap1.obj" /Fd"Release/vc70.pdb" /W3 /c /Wp64 /Zi /TP
+"\Documents and Settings\Jake\My Documents\Projects\Python Code\fly\devices\wrapper\pdvpycam24_wrap.cxx"
+]
+Creating command line "cl.exe @"c:\Documents and Settings\Jake\My Documents\Projects\Visual Studio\_pdvpycam24\Release\RSP000001.rsp" /nologo"
+Creating temporary file "c:\Documents and Settings\Jake\My Documents\Projects\Visual Studio\_pdvpycam24\Release\RSP000002.rsp" with contents
+[
+/OUT:"c:\documents and settings\jake\my documents\projects\python code\fly\devices\wrapper\_pdvpycam24.dll" /INCREMENTAL:NO /NOLOGO /DLL /DEF:".\_pdvpycam24.def" /DEBUG /PDB:"Release/_pdvpycam24.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /IMPLIB:"Release/_pdvpycam24.lib" /MACHINE:X86 c:\python24\libs\python24.lib "\Python24\libs\python24.lib"
+".\Release\edt_error.obj"
+".\Release\libdvu.obj"
+".\Release\libedt.obj"
+".\Release\libpdv.obj"
+".\Release\pdv_bayer_filter.obj"
+".\Release\pdv_dmy_image.obj"
+".\Release\pdv_interlace.obj"
+".\Release\pdvpycam24_wrap1.obj"
+".\Release\stdafx.obj"
+".\Release\_pdvpycam24.res"
+]
+Creating command line "link.exe @"c:\Documents and Settings\Jake\My Documents\Projects\Visual Studio\_pdvpycam24\Release\RSP000002.rsp""
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Output Window
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>Compiling...
+pdvpycam24_wrap.cxx
+\Documents and Settings\Jake\My Documents\Projects\Python Code\fly\devices\wrapper\pdvpycam24_wrap.cxx(363) : warning C4244: 'return' : conversion from '__w64 int' to 'int', possible loss of data
+Linking...
+mfcs71.lib(dllmodul.obj) : error LNK2005: _DllMain@12 already defined in MSVCRT.lib(dllmain.obj)
+mfcs71.lib(dllmodul.obj) : warning LNK4006: _DllMain@12 already defined in MSVCRT.lib(dllmain.obj); second definition ignored
+   Creating library Release/_pdvpycam24.lib and object Release/_pdvpycam24.exp
+c:\documents and settings\jake\my documents\projects\python code\fly\devices\wrapper\_pdvpycam24.dll : fatal error LNK1169: one or more multiply defined symbols found
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Results
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
+Build log was saved at "file://c:\Documents and Settings\Jake\My Documents\Projects\Visual Studio\_pdvpycam24\Release\BuildLog.htm"
+_pdvpycam24 - 2 error(s), 2 warning(s)</pre></table><table   width=100% height=20 bgcolor=#CFCFE5><tr><td><font face=arial size=+2>
+</font></table></body></html>

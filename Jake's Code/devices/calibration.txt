@@ -1,0 +1,2 @@
+Voltage at 0% O2	Voltage at 21% O2
+3	193.0

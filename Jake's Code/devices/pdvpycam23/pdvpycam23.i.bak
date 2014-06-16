@@ -1,0 +1,116 @@
+/* File : pdvpycam23.i */
+%module pdvpycam23
+
+%{
+#include "c:\program files\pdv\edtinc.h"
+%}
+
+%newobject py_cam_get_frame;
+%inline %{
+
+char *py_cam_get_frame (unsigned char *frame_p, int img_size)
+{ 
+	int i;
+	char *img_data_string;
+	img_data_string = new char[img_size];
+	
+	for(i=0; i<img_size; i++)
+	{
+		*(img_data_string + i) = static_cast<char>(*(frame_p + i));
+	}
+	return img_data_string;
+}
+
+
+%}
+
+
+typedef  EdtDev PdvDev ;
+
+typedef struct {
+	u_int startdma ;
+	u_int enddma ;
+	u_int flushdma ;
+	u_int timeout ;
+} Edtinfo;
+
+
+PdvDev *pdv_open(char *devname, int unit);
+int pdv_close(PdvDev *pdv_p);
+int pdv_read(PdvDev *pdv_p, unsigned char *buf,	unsigned long size) ;
+unsigned char *pdv_image(PdvDev *pdv_p) ;
+void pdv_start_image(PdvDev *pdv_p) ;
+void pdv_start_images(PdvDev *pdv_p, int count) ;
+void pdv_perror(char *str) ;
+void pdv_setdebug(PdvDev *pdv_p, int debug) ;
+void pdv_start_hardware_continuous(PdvDev *pdv_p) ;
+void pdv_stop_hardware_continuous(PdvDev *pdv_p) ;
+void pdv_flush_fifo(PdvDev *pdv_p) ;
+unsigned char *pdv_wait_image(PdvDev *pdv_p) ;
+unsigned char *pdv_last_image_timed(PdvDev *pdv_p, u_int *timep) ;
+unsigned char *pdv_wait_image_timed(PdvDev *pdv_p, u_int *timep) ;
+unsigned char *pdv_wait_images_timed(PdvDev *pdv_p, int count, u_int *timep) ;
+unsigned char *pdv_wait_images(PdvDev *pdv_p, int count) ;
+char *pdv_get_cameratype(PdvDev *pdv_p);
+char *pdv_get_camera_class(PdvDev * pdv_p);
+char *pdv_get_camera_model(PdvDev * pdv_p);
+char *pdv_camera_type(PdvDev *pdv_p);
+int pdv_get_width(PdvDev *pdv_p);
+int pdv_set_width(PdvDev *pdv_p, int value);
+int pdv_get_height(PdvDev *pdv_p);
+int pdv_set_height(PdvDev *pdv_p, int value);
+int pdv_get_depth(PdvDev *pdv_p);
+int pdv_get_extdepth(PdvDev *pdv_p);
+int pdv_set_depth(PdvDev *pdv_p, int value);
+int pdv_set_extdepth(PdvDev *pdv_p, int value);
+int pdv_get_imagesize(PdvDev *pdv_p);
+int pdv_get_allocated_size(PdvDev *pdv_p);
+int pdv_set_exposure(PdvDev *pdv_p, int value);
+int pdv_set_gain(PdvDev *pdv_p, int value);
+int pdv_set_blacklevel(PdvDev *pdv_p, int value);
+int pdv_set_binning(PdvDev *pdv_p, int xval, int yval);
+int pdv_set_mode(PdvDev *pdv_p, char *mode, int mcl);
+int pdv_get_exposure(PdvDev *pdv_p) ;
+int pdv_get_gain(PdvDev *pdv_p) ;
+int pdv_get_blacklevel(PdvDev *pdv_p) ;
+int pdv_set_aperture(PdvDev *edt_p, int value);
+int pdv_set_timeout(PdvDev *pdv_p, int value) ;
+int pdv_get_timeout(PdvDev *pdv_p) ;
+int pdv_update_values_from_camera(PdvDev *pdv_p) ;
+int pdv_overrun(PdvDev *pdv_p) ;
+int pdv_timeouts(PdvDev *pdv_p) ;
+int pdv_timeout_cleanup(PdvDev *pdv_p) ;
+int pdv_in_continuous(PdvDev *pdv_p);
+int pdv_debug_level() ;
+u_char ** pdv_buffer_addresses(EdtDev *edt_p) ;
+uchar_t *pdv_alloc(int size) ;
+void pdv_free(uchar_t *ptr) ;
+int  pdv_multibuf(EdtDev *edt_p, int numbufs) ;
+int pdv_set_baud(EdtDev  *edt_p, int  baud);
+int pdv_get_baud(EdtDev  *edt_p);
+void pdv_check(EdtDev *edt_p) ;
+void pdv_checkfrm(EdtDev *edt_p, u_short *image, u_int imagesize, int verbose) ;
+int pdv_set_roi(PdvDev *pdv_p, int hskip, int hactv, int vskip, int vactv) ;
+int pdv_enable_roi(PdvDev *pdv_p, int flag) ;
+int pdv_set_cam_width(PdvDev *pdv_p, int value) ;
+int pdv_set_cam_height(PdvDev *pdv_p, int value) ;
+int pdv_access(char *fname, int perm) ;
+void pdv_setup_continuous(PdvDev *pdv_p) ;
+void pdv_stop_continuous(PdvDev *pdv_p) ;
+int pdv_get_min_shutter(EdtDev *edt_p);
+int pdv_get_max_shutter(EdtDev *edt_p);
+int pdv_get_min_gain(EdtDev *edt_p);
+int pdv_get_max_gain(EdtDev *edt_p);
+int pdv_get_min_offset(EdtDev *edt_p);
+int pdv_get_max_offset(EdtDev *edt_p);
+void pdv_invert(PdvDev *pd, int val);
+unsigned char * pdv_wait_last_image(PdvDev * pdv_p, int *nSkipped);
+unsigned char * pdv_wait_next_image(PdvDev * pdv_p, int *nSkipped);
+int pdv_get_cam_width(PdvDev *pdv_p);
+int pdv_get_cam_height(PdvDev *pdv_p);
+int pdv_force_single(PdvDev *pdv_p);
+int pdv_variable_size(PdvDev *pdv_p);
+int pdv_pause_for_serial(PdvDev *pdv_p);
+void pdv_set_defaults(PdvDev *pdv_p) ;
+//int pdv_readcfg(char *cfgfile, Dependent *pm, Edtinfo *ei) ;
+//int pdv_initcam(EdtDev *edt_p, Dependent *dd_p, int unit, Edtinfo *edtinfo, char *cfgfname, char *bitdir, int pdv_debug);

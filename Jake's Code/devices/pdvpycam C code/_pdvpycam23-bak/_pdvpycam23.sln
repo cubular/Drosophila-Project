@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_pdvpycam23", "_pdvpycam23.vcproj", "{A6DEEF71-170E-45E2-8F9A-71D19EDE3FE0}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{A6DEEF71-170E-45E2-8F9A-71D19EDE3FE0}.Debug.ActiveCfg = Debug|Win32
+		{A6DEEF71-170E-45E2-8F9A-71D19EDE3FE0}.Debug.Build.0 = Debug|Win32
+		{A6DEEF71-170E-45E2-8F9A-71D19EDE3FE0}.Release.ActiveCfg = Release|Win32
+		{A6DEEF71-170E-45E2-8F9A-71D19EDE3FE0}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
