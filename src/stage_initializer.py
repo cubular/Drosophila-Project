@@ -1,24 +1,11 @@
-#Initialize Camera
-print "Initializing Camera..."
-import MMCorePy
-from pylab import *
-mmc = MMCorePy.CMMCore()
-
-mmc.loadDevice("cam","HamamatsuHam","HamamatsuHam_DCAM")
-mmc.initializeDevice("cam")
-mmc.setCameraDevice("cam")
-print "Camera initialization successful!"
-
 # Image Processing
 import matplotlib.pyplot as plt
-
 import serial
 import time
 
 # Camera viewing length and height
 incrementX = '36000'
 incrementY = '30000'
-
 
 rowSize = 14
 numberOfRows = 14
