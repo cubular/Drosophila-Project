@@ -1,0 +1,5 @@
+These are the scripting codes for the "Automated Cardiac Phenotyping of Drosophila melanogaster in a Hypoxic Chamber."
+
+The purpose of this project is to create an entirely automatic system that can screen the cardiac parameters of the Drosophila melanogaster and return to the user a set of useful cardiac data points.
+
+The src folder contains Python code and a .dll driver that connects to the camera (Hamamatsu C3900). There are also two device initializer classes that can initialize the camera and stage (Conix 4400).

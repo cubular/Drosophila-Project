@@ -15,7 +15,11 @@ class CameraDriver:
         mmc.initializeDevice("cam")
         mmc.setCameraDevice("cam")
         print "Camera initialization successful!"
-        
+
+    # Continuous live feed
+    def startLiveFeed(self, intervalMs):
+        mmc.startContinuousSequenceAcquisition(intervalMs)
+    
     def snapImage(self):
     	mmc.snapImage()
     	print "Image acquired"
